@@ -1,6 +1,7 @@
 import Nav from "../Nav/Nav";
 import "./Layout.css"
 import Logo from "../../Logo/Logo";
+import CategoryList from "../CategoryList/CategoryList";
 
 export default function Layout({children}) {
   return (
@@ -10,7 +11,7 @@ export default function Layout({children}) {
         <Nav></Nav>
       </header>
       <aside>
-        <nav>NAV CATEGORIES</nav>
+        <CategoryList></CategoryList>
       </aside>
       <main>
         {children}
