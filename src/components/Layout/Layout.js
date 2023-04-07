@@ -1,11 +1,12 @@
 import Nav from "../Nav/Nav";
-import logo from "../../assets/b-logo.png"
+import "./Layout.css"
+import Logo from "../../Logo/Logo";
 
 export default function Layout({children}) {
   return (
     <div className="Layout">
       <header>
-        <img src={logo} alt="logo" />
+        <Logo></Logo>
         <Nav></Nav>
       </header>
       <aside>

@@ -1,19 +1,21 @@
 .Nav .NavItem a {
   text-decoration: none;
-  color: #2e2cb8;
+  color: #a70403;
 }
 
 .Nav .NavItem a:active {
-  color: #020064;
+  color: #a70403;
 }
 
 .Nav .NavItem {
   list-style: none;
-  padding: 10px;
+  padding: 10px 30px;
 }
 
 .Nav ul{
   display: flex;
   justify-content: center;
+  padding: 0px;
+  margin-top: 8px;
 }
 
