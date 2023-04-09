@@ -1,0 +1,46 @@
+.CategoryList ul {
+  border: 3px solid #a70403;;
+  width: 206px;
+  padding: 0px;
+}
+
+
+.CategoryList ul li {
+  list-style: none;
+  padding: 10px;
+  padding-left: 13%;
+  border-bottom: 1px solid #a70403;
+}
+
+.CategoryList ul li a:hover ~ .auto-icons {
+  color: yellow;
+  background-color: aqua;
+  background: saddlebrown;
+}
+
+.CategoryList ul li:last-child {
+    border: none;
+}
+
+
+.CategoryList ul li a {
+  text-decoration: none;
+  color: black;
+  font-size: 17px;
+  font-family: math;
+}
+
+
+.auto-icons {
+  color: #a70403;
+  transform: translateX(-13px);
+}
+
+.auto-icons {
+  color: #a70403;
+  transform: translateX(-13px);
+}
+
+
+
+
