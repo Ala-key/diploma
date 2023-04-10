@@ -36,9 +36,8 @@
   transform: translateX(-13px);
 }
 
-.auto-icons {
-  color: #a70403;
-  transform: translateX(-13px);
+.auto-icons:hover {
+  color: rgb(255, 123, 0);
 }
 
 
