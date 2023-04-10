@@ -1,17 +1,26 @@
 import { useMatch } from "react-router";
+import { categories } from "../firebase";
+import {getDocs} from "firebase/firestore/lite"
+import { categories } from "../firebase";
+import { useState } from "react";
 
 export default function Category() {
 
+  const [categorylist,SetCategoryList] = useState([]);
   const {params} = useMatch("/categories/:slug");
-  const categories = [
-    { id: 1, name: "Mercedes", slug: "mercedes" },
-    { id: 2, name: "Honda", slug: "honda" },
-    { id: 3, name: "Ford", slug: "ford" },
-    { id: 4, name: "Chevrolet", slug: "chevrolet" },
-    { id: 5, name: "Audi", slug: "audi" },
-    { id: 6, name: "BMW", slug: "bmw" }
+ 
+  getDocs(categories).then(snapshot => {
+    const newCategoryList = [];
+    snapshot.docs.forEach(doc => {
+      const category = doc.data();
+      category.id = doc.id;
 
-  ];
+      newCategoryList.push(category);
+    })
+    SetCategoryList(newCategoryList);
+  })
+
+  
 
   const category = categories.find((category) => category.slug === params.slug)
 
