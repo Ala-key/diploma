@@ -24,4 +24,4 @@ const analytics = getAnalytics(app);
 const db = getFirestore(app);
 
 
-export const categories = collection(db,'categories');
+export const categoryCollection = collection(db,'categories');
