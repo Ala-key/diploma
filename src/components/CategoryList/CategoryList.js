@@ -2,14 +2,14 @@ import { NavLink } from "react-router-dom";
 import "./CategoryList.css"
 import { SiMercedes } from "react-icons/si"
 import { SiFord } from "react-icons/si"
-import {SiChevrolet} from "react-icons/si"
-import {SiHonda} from "react-icons/si"
-import {SiBmw} from "react-icons/si"
-import {SiAudi} from "react-icons/si"
+import { SiChevrolet } from "react-icons/si"
+import { SiHonda } from "react-icons/si"
+import { SiBmw } from "react-icons/si"
+import { SiAudi } from "react-icons/si"
 import { useMatch } from "react-router";
 import { categories } from "../../firebase";
-import {getDocs} from "firebase/firestore/lite"
-import { useState } from "react";
+import { getDocs } from "firebase/firestore/lite"
+import { useEffect, useState } from "react";
 
 
 
@@ -26,19 +26,21 @@ export default function CategoryList() {
   //   { id: 5, name: "Mercedes", slug: "mercedes" }
   // ];
 
-  const [categorylist,SetCategoryList] = useState([]);
- 
- 
-  getDocs(categories).then(snapshot => {
-    const newCategoryList = [];
-    snapshot.docs.forEach(doc => {
-      const cat = doc.data();
-      cat.id = doc.id;
+  const [categorylist, SetCategoryList] = useState([]);
 
-      newCategoryList.push(cat);
+  useEffect(() => {
+    getDocs(categories).then(snapshot => {
+      const newCategoryList = [];
+      snapshot.docs.forEach(doc => {
+        const cat = doc.data();
+        cat.id = doc.id;
+
+        newCategoryList.push(cat);
+      })
+      SetCategoryList(newCategoryList);
     })
-    SetCategoryList(newCategoryList);
-  })
+  },[])
+
 
 
   const output = categorylist.map(category => (
@@ -52,7 +54,7 @@ export default function CategoryList() {
 
   return (
     <div className="CategoryList">
-      <ul>    
+      <ul>
         {output}
         {/* <li>
           <NavLink to={"/categories/mercedes"}>
