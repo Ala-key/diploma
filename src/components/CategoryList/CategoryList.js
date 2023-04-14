@@ -6,7 +6,6 @@ import { AppContext } from "../../App";
 
 
 
-
 export default function CategoryList() {
 
   const {categories} = useContext(AppContext);

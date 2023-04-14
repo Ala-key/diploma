@@ -5,14 +5,12 @@ import ProductList from "../components/ProductList/ProductList";
 import NotFound from "./NotFound";
 
 export default function Category() {
-  const params = useMatch("/categories/:slug");
-
+  const {params} = useMatch("/categories/:slug");
+ 
   const { categories } = useContext(AppContext);
 
   const category = categories.find(
-    (category) => category.slug === params.slug
-  );
-
+    (category) => category.slug === params.slug);
   if (!category) {
     return <NotFound />
   }
