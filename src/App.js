@@ -9,6 +9,7 @@ import Contacts from "./pages/Contacts";
 import Delivery from "./pages/Delivery";
 import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
+import Product from "./pages/Product";
 
 
 export const AppContext = createContext({
@@ -59,6 +60,7 @@ function App() {
             <Route path="/contacts" element={<Contacts />}></Route>
             <Route path="/delivery" element={<Delivery />}></Route>
             <Route path="/categories/:slug" element={<Category />}></Route>
+            <Route path="/product/:slug" element={<Product />}></Route>
             <Route path="*" element={<NotFound />}></Route>
           </Routes>
         </Layout>

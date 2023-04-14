@@ -11,13 +11,15 @@ export default function Category() {
 
   const category = categories.find(
     (category) => category.slug === params.slug);
+   
+
   if (!category) {
     return <NotFound />
   }
   
   return (
     <div className="Category">
-      <ProductList />
+      <ProductList category={category}/>
     </div>
   );
 }

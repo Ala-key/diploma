@@ -4,4 +4,5 @@
 
 .ProductList .Product  {
   display: flex;
+  flex-direction: column;
 }
