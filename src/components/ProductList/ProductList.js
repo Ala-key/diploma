@@ -10,11 +10,14 @@ export default function ProductList({ category }) {
   const output = products.filter(product => product.category === category.id).map(product => (
     <div className="Product">
       <img src={product.photo} alt={product.name}></img>
-      <NavLink to={'/product/' + product.slug}>
-        {product.name}
-      </NavLink>
-      <span>{product.buildcountry}</span>
-      <span>{product.price} $</span>
+      <div className="info">
+        <NavLink to={'/product/' + product.slug} className="bold-weight">
+          {product.name}
+        </NavLink>
+        <span>{product.bodytype}</span>
+        <span>{product.buildcountry}</span>
+        <span className="bold-weight">{product.price} $</span>
+      </div>
     </div>
   ))
 

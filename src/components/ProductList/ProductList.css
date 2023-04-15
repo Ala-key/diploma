@@ -1,8 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500&display=swap');
+
+
+
 .ProductList .Product img {
-   width: 250px;
+   width: 100%;
+}
+
+.ProductList {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .ProductList .Product  {
   display: flex;
   flex-direction: column;
+  max-width: 200px;
+  margin: 18px;
+  margin-top: -9px;
+  font-family: 'Oswald', sans-serif;
 }
+
+
+.ProductList .Product a {
+  color: #a70403;
+  text-decoration: none;
+  font-size: 17px;
+  font-family: 'Oswald', sans-serif;
+  margin-bottom: 10px;
+}
+
+.bold-weight {
+  font-weight: 500;
+}
+
+
+.ProductList .Product .info {
+   display: flex;
+   flex-direction: column;
+}
+
