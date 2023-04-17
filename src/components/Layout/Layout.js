@@ -14,13 +14,6 @@ export default function Layout({children}) {
         <Logo></Logo>
         <Nav></Nav>
       </header>
-      <div className="side-bar">
-        <img src={firstphoto} alt="bmw3"/>
-        <div className="btn">
-            <button><MdArrowBackIosNew className="arrows"/></button>
-            <button><MdArrowForwardIos className="arrows"/></button>
-        </div>
-      </div>
       <aside>
         <CategoryList></CategoryList>
       </aside>

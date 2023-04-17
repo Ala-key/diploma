@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import { AppContext } from "../../App";
+import AddToCart from "../AddToCart/AddToCart";
 import "./ProductList.css"
 
 export default function ProductList({ category }) {
@@ -17,6 +18,7 @@ export default function ProductList({ category }) {
         <span>{product.bodytype}</span>
         <span>{product.buildcountry}</span>
         <span className="bold-weight">{product.price} $</span>
+        <AddToCart product={product}></AddToCart>
       </div>
     </div>
   ))
