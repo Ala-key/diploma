@@ -7,6 +7,7 @@ export default function AddToCart({product}){
     function onAddtoClick(){
       const qty = cart[product.id] ? cart[product.id] + 1 : 1;
       console.log(qty);
+      console.log(cart);
       setCart({...cart,[product.id]: qty})
     }
     return(

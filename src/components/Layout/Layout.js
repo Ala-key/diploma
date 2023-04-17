@@ -5,6 +5,7 @@ import firstphoto from "../../assets/anwb_w760.jpg"
 import CategoryList from "../CategoryList/CategoryList";
 import {MdArrowForwardIos} from "react-icons/md"
 import {MdArrowBackIosNew} from "react-icons/md"
+import CartLink from "../CartLink/CartLink";
 
 
 export default function Layout({children}) {
@@ -13,6 +14,7 @@ export default function Layout({children}) {
       <header>
         <Logo></Logo>
         <Nav></Nav>
+        <CartLink/>
       </header>
       <aside>
         <CategoryList></CategoryList>
