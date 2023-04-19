@@ -6,6 +6,7 @@ import CategoryList from "../CategoryList/CategoryList";
 import {MdArrowForwardIos} from "react-icons/md"
 import {MdArrowBackIosNew} from "react-icons/md"
 import CartLink from "../CartLink/CartLink";
+import Auth from "../Auth/Auth";
 
 
 export default function Layout({children}) {
@@ -15,6 +16,7 @@ export default function Layout({children}) {
         <Logo></Logo>
         <Nav></Nav>
         <CartLink/>
+        <Auth/>
       </header>
       <aside>
         <CategoryList></CategoryList>

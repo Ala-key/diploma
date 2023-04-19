@@ -1,6 +1,11 @@
 .OrderForm {
+  background-color: antiquewhite;
   display: flex;
   flex-direction: column;
+  border: 1px solid aliceblue;
 }
 
 
+.OrderForm button {
+  width: 70px;
+}
