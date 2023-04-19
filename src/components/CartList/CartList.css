@@ -1,0 +1,10 @@
+.CartItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+.CartItem img {
+  width: 135px;
+}

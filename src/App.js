@@ -4,6 +4,7 @@ import { Link, Route, Routes } from "react-router-dom";
 import Layout from "./components/Layout/Layout";
 import { categoryCollection, productCollection } from "./firebase";
 import About from "./pages/About";
+import Cart from "./pages/Cart";
 import Category from "./pages/Category";
 import Contacts from "./pages/Contacts";
 import Delivery from "./pages/Delivery";
@@ -25,7 +26,11 @@ function App() {
 
   const [categories, setCategories] = useState([]);
   const [products, setProducts] = useState([]);
-  const [cart, setCart] = useState([]);
+  const [cart, setCart] = useState(() => {return JSON.parse(localStorage.getItem("cart")) || {}});
+
+  useEffect(() => {
+    localStorage.setItem("cart",JSON.stringify(cart))
+  },[cart]);
 
 
   useEffect(() => { // выполнить только однажды
@@ -63,6 +68,7 @@ function App() {
             <Route path="/contacts" element={<Contacts />}></Route>
             <Route path="/delivery" element={<Delivery />}></Route>
             <Route path="/categories/:slug" element={<Category />}></Route>
+            <Route path="/cart" element={<Cart/>}></Route>
             <Route path="/product/:slug" element={<Product />}></Route>
             <Route path="*" element={<NotFound />}></Route>
           </Routes>
