@@ -1,21 +1,16 @@
 import { useContext } from "react";
 import { AppContext } from "../../App"
 import { NavLink } from "react-router-dom";
+import {FaShoppingCart} from "react-icons/fa"
+
 
 export default function CartLink() {
-  const { cart } = useContext(AppContext);
-
-  console.log(cart);
-
-  const total = Object.values(cart).reduce(
-    (acc, num) => acc + num, 0
-  )
 
 
   return (
     <div className="CartLink">
       <NavLink to="/cart">
-          Cart ({total})
+           <FaShoppingCart color="black"/>
       </NavLink>
     </div>
   )
