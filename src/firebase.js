@@ -1,10 +1,11 @@
 // Import the functions you need from the SDKs you need
+// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-import { collection, getFirestore } from "firebase/firestore/lite";
-import {getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithPopup, signOut} from 'firebase/auth'
+import { getFirestore, collection } from 'firebase/firestore/lite'
+import { GoogleAuthProvider, getAuth, onAuthStateChanged, signInWithPopup, signOut } from 'firebase/auth';
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
+
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
@@ -18,19 +19,18 @@ const firebaseConfig = {
   measurementId: "G-9PRSFECD54"
 };
 
-// Initialize Firebase
+// Инициализация приложения
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
-
+// Инициализация базы данных
 const db = getFirestore(app);
 const auth = getAuth(app);
 
-
-export const categoryCollection = collection(db,'categories');
-export const productCollection = collection(db,'products');
-export const ordersCollection = collection(db,'orders');
+// Получение списка категорий (коллекции документов)
+export const categoryCollection = collection(db, 'categories');
+export const productsCollection = collection(db, 'products');
+export const ordersCollection = collection(db, 'orders');
 
 const provider = new GoogleAuthProvider();
-export const signin = () => signInWithPopup(auth,provider);
-export const signout = () => signOut();
-export const onAuthChange = (calback) => onAuthStateChanged(auth,provider);
+export const signIn = () => signInWithPopup(auth, provider);
+export const signOff = () => signOut(auth);
+export const onAuthChange = (callback) => onAuthStateChanged(auth, callback);

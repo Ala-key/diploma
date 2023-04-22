@@ -20,6 +20,7 @@ export default function CartList() {
       <input type="number" value={cart[product.id]} min={1} />
       <span>{cart[product.id] * product.price} $</span>
       <button>Remove</button>
+      <br/>
     </div>
   ));
 

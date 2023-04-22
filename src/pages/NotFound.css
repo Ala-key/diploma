@@ -1,0 +1,204 @@
+* {
+  box-sizing: border-box;
+}
+
+
+.car {
+  position: absolute;
+  bottom: 22px;
+  right: 0px;
+  height: 200px;
+  width: 300px;
+  animation-name: move;
+  animation-duration: 50s;
+  animation-iteration-count:"ease-in-out";
+
+}
+
+
+#title {
+  color: white;
+}
+
+body {
+
+ 
+
+}
+
+.NotFound {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.car .kapot {
+  width: 40%;
+}
+
+#ghost {
+  width: 62px;
+  position: absolute;
+  top: 72%;
+  left: 18%;
+  animation-name: opacitychange;
+  animation-duration: 5s;
+  animation-delay: 6s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+.neonText {
+  color: #000;
+  font-size: 78px;     margin-bottom: 21px;     text-shadow: 1px 4px 3px black,1px 4px 3px black;     color: #000;
+}
+
+.notfound {
+  font-size: 40px;     margin-top: 0;     text-shadow: 1px 5px 3px black, 1px 2px 1px black;
+  color: #000;     color: #000;
+}
+
+
+h1,
+h2 {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 18px;
+  font-family: "Vibur", sans-serif;
+}
+
+.kapot {
+  position: absolute;
+  right: 0px;
+  bottom: -7px;
+  transform: rotate(1deg);
+  /* box-shadow: yellow -136px 10px 26px -6px; */
+  z-index: 1;
+
+
+
+}
+
+
+
+.koleso {
+  position: absolute;
+  bottom: -15px;
+  right: 2px;
+  width: 28px;
+  animation-name: rotate;
+  animation-timing-function: linear;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+
+}
+
+.koleso-left {
+  right: 80px;
+}
+
+@keyframes move {
+  0% {
+    bottom: 22px;
+    right: 0px;
+
+  }
+
+  20% {
+    bottom: 28px;
+    right: 100px;
+
+  }
+
+  30% {
+    bottom: 35px;
+    right: 200px;
+
+  }
+
+  40% {
+    bottom: 25px;
+    right: 300px;
+  }
+
+  50% {
+    bottom: 10px;
+    right: 400px;
+  }
+
+  60% {
+    bottom: 5px;
+    right: 500px;
+  }
+
+  70% {
+    bottom: 5px;
+    right: 500px;
+  }
+
+  80%{
+    bottom: 5px;
+    right: 500px;
+  }
+
+  90% {
+    bottom: 5px;
+    right: 500px;
+  }
+
+  100% {
+    position: absolute;
+    bottom: 22px;
+    right: 634px;
+    transform: rotate(225deg);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes opacitychange {
+  0% {
+    opacity: 0;
+  }
+
+  30% {
+    opacity: 0.3;
+    position: absolute;
+    top: 50%;
+  }
+
+  50% {
+    opacity: 0.5;
+    position: absolute;
+    top: 60%;
+  }
+
+  70% {
+    opacity: 1;
+    position: absolute;
+    top: 72%;
+  }
+
+  100% {
+    opacity: 0;
+  }
+
+}
+
+section {
+  background-color: #090b25;
+  width: 100%;
+  height: 30px;
+
+  position: absolute;
+  bottom: -22px;
+}
