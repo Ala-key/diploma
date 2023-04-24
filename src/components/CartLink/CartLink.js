@@ -1,5 +1,3 @@
-import { useContext } from "react";
-import { AppContext } from "../../App"
 import { NavLink } from "react-router-dom";
 import {FaShoppingCart} from "react-icons/fa"
 
