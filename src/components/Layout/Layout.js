@@ -7,6 +7,7 @@ import { MdArrowForwardIos } from "react-icons/md"
 import { MdArrowBackIosNew } from "react-icons/md"
 import CartLink from "../CartLink/CartLink";
 import Auth from "../Auth/Auth";
+import Account from "../Account/Account";
 
 
 export default function Layout({ children }) {
@@ -16,8 +17,9 @@ export default function Layout({ children }) {
         <Logo></Logo>
         <Nav></Nav>
         <div id="icons">
-          <CartLink className="cartLink" />
+          <CartLink/>
           <Auth />
+          <Account/>
         </div>
       </header>
       <aside>

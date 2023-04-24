@@ -6,8 +6,13 @@ import { AppContext } from "../../App";
 import { useNavigate } from "react-router";
 
 export default function OrderForm() {
-  const { cart,setCart } = useContext(AppContext);
+  const { cart,setCart,user } = useContext(AppContext);
   const navigate = useNavigate();
+
+
+  if (!user) {
+    return "Please login";
+  }
 
   function onFormSubmit(event) {
     event.preventDefault();
@@ -17,7 +22,8 @@ export default function OrderForm() {
     addDoc(ordersCollection, {
       name: formData.get('name'),
       phone: formData.get('phone'),
-      email: formData.get('email'),
+      user: user.uid,
+      email: user.email,
       address: formData.get('address'),
       cart: cart,
     })
