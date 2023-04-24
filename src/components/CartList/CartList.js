@@ -4,7 +4,7 @@ import { AppContext } from "../../App";
 import './CartList.css'
 
 export default function CartList() {
-  const {products,cart,setCart} = useContext(AppContext);
+  const {products,cart} = useContext(AppContext);
 
   const productsId = Object.keys(cart);
 
