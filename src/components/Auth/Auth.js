@@ -2,27 +2,32 @@ import { useContext } from "react";
 import "./Auth.css"
 import { logIn, logOut } from "../../firebase";
 import { AppContext } from "../../App";
-import {ImExit} from "react-icons/im";
+import { ImExit } from "react-icons/im";
 import CartLink from "../CartLink/CartLink";
 
 export default function Auth() {
-  const { user } = useContext(AppContext); 
+  const { user } = useContext(AppContext);
 
-  console.log(user);
 
-  const backgroundImageUrl = user && user.photoURL ? `url(${user.photoURL})` : null;
-  const styles = {
-    backgroundImage: backgroundImageUrl
-    // и другие свойства
+  let styles;
+
+  if (user) {
+    const backgroundImageUrl = user && user.photoURL ? `url(${user.photoURL})` : null;
+    styles = {
+      backgroundImage: backgroundImageUrl,
+      display: "block"
+      // и другие свойства
+    }
   }
+
 
   return (
     <div className="Auth">
-       <CartLink/>
+      {user ? <CartLink /> : null}
       {!user ? <button onClick={logIn}>Sign in</button> : null}
-      {user ? <button className="signOut" onClick={logOut}><ImExit/></button> : null}
+      {user ? <button className="signOut" onClick={logOut}><ImExit /></button> : null}
       <div className="accountImage" style={styles}>
-          
+
       </div>
     </div>
   );

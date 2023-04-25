@@ -17,11 +17,28 @@
    cursor: pointer;
 }
 
+.Auth button {
+  background: transparent;
+  border: 2px solid #a70403;
+  border-radius: 10px;
+  box-sizing: border-box;
+  display: block;
+  font-size: 13px;
+  color: #a70403;
+  height: 35px;
+  line-height: 9px;
+  margin-top: -1px;
+  padding: 5px 28px!important;
+  text-align: center;
+  text-transform: none;
+}
+
 
 .accountImage {
+  display: none;
   height: 28px;
   width: 29px;
-  background-color: aqua;
+  background-color: gray;
   border-radius: 20px;
   background-position: center;
   background-repeat: no-repeat;
