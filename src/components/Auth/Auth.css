@@ -7,6 +7,24 @@
 }
 
 
+.Auth {
+  display: flex;
+  align-items: center;
+}
+
+
 .signOut:hover {
    cursor: pointer;
+}
+
+
+.accountImage {
+  height: 28px;
+  width: 29px;
+  background-color: aqua;
+  border-radius: 20px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  
 }
