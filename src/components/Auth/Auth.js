@@ -7,6 +7,8 @@ import {ImExit} from "react-icons/im";
 export default function Auth() {
   const { user } = useContext(AppContext);
 
+  console.log(user);
+
   return (
     <div className="Auth">
       {!user ? <button onClick={logIn}>Sign in</button> : null}

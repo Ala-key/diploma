@@ -4,13 +4,14 @@ import { AppContext } from "../../App";
 import AddToCart from "../AddToCart/AddToCart";
 import "./ProductList.css"
 
+
 export default function ProductList({ category }) {
   const { products } = useContext(AppContext);
 
 
   const output = products.filter(product => product.category === category.id).map(product => (
     <div className="Product">
-      <img src={product.photo} alt={product.name}></img>
+      <img className="carphoto" src={product.photo} alt={product.name}></img>
       <div className="info">
         <NavLink to={'/product/' + product.slug} className="bold-weight">
           {product.name}

@@ -8,6 +8,7 @@ import { SiChevrolet } from "react-icons/si"
 import { SiHonda } from "react-icons/si"
 import { SiBmw } from "react-icons/si"
 import { SiAudi } from "react-icons/si"
+import Notification from "../Notification/Notification";
 
 
 
@@ -70,36 +71,6 @@ export default function CategoryList() {
     <div className="CategoryList">
       <ul>
         {output}
-          {/* <li>
-          <NavLink to={"/categories/mercedes"}>
-            <SiMercedes className="auto-icons"></SiMercedes> Mercedes
-          </NavLink>
-        </li>   
-        <li>
-          <NavLink to={"/categories/ford"}>
-            <SiFord className="auto-icons"></SiFord> Ford
-          </NavLink>
-        </li>   
-        <li>
-          <NavLink to={"/categories/chevrolet"}>
-            <SiChevrolet className="auto-icons"></SiChevrolet> Chevrolet
-          </NavLink>
-        </li>   
-        <li>
-          <NavLink to={"/categories/honda"}>
-            <SiHonda className="auto-icons"></SiHonda> Honda
-          </NavLink>
-        </li>   
-        <li>
-          <NavLink to={"/categories/bmw"}>
-            <SiBmw className="auto-icons"></SiBmw> BMW
-          </NavLink>
-        </li> 
-        <li>
-          <NavLink to={"/categories/audi"}>
-            <SiAudi className="auto-icons"></SiAudi> Audi
-          </NavLink>
-        </li>     */}
       </ul>
     </div>
   )
