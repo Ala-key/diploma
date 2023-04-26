@@ -17,7 +17,7 @@ export default function AddToCart({ product }) {
     console.log(qty);
     setCart({ ...cart, [product.id]: qty });
     setDisplay("flex");
-    setTimeout(onHideNotification, 5000);
+    setTimeout(onHideNotification, 3000);
   }
 
   function onHideNotification() {

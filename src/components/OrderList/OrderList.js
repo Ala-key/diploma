@@ -14,7 +14,7 @@ export default function OrderList() {
       const product = products.find(product => product.id === productId);
 
       return (
-        <div>
+        <div className="OrderList">
           {product.name}: {order.cart[productId]} X {product.price} som = {order.cart[productId] * product.price} som
         </div>
       );
@@ -25,7 +25,7 @@ export default function OrderList() {
         <div>Name: {order.name}</div>
         <div>Phone: {order.phone}</div>
         <div>Address: {order.address}</div>
-        <div>Cart: {cartOutput}</div>
+        <div>Cart:{cartOutput}</div>
       </div>
     );
   })
