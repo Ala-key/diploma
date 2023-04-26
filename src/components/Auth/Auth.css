@@ -17,7 +17,7 @@
    cursor: pointer;
 }
 
-.Auth button {
+.Auth .signIn {
   background: transparent;
   border: 2px solid #a70403;
   border-radius: 10px;
@@ -31,6 +31,11 @@
   padding: 5px 28px!important;
   text-align: center;
   text-transform: none;
+}
+
+
+.mar-right {
+  margin-right: 8px;
 }
 
 

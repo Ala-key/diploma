@@ -1,8 +1,6 @@
-import { BsCheckCircleFill } from "react-icons/bs";
 import "./Notification.css";
 import check from "../../assets/check-icon.png";
-import close from "../../assets/close-icon.svg";
-import { useContext } from "react";
+
 
 export default function Notification({
   current,

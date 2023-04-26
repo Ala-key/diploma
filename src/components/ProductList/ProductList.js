@@ -19,7 +19,7 @@ export default function ProductList({ category }) {
         <span>{product.bodytype}</span>
         <span>{product.buildcountry}</span>
         <span className="bold-weight">{product.price} $</span>
-        <AddToCart product={product}></AddToCart>
+        <AddToCart className="mar-top" product={product}></AddToCart>
       </div>
     </div>
   ))
