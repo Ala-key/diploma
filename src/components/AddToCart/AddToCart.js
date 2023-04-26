@@ -17,12 +17,21 @@ export default function AddToCart({ product }) {
     console.log(qty);
     setCart({ ...cart, [product.id]: qty });
     setDisplay("flex");
-    setTimeout(onHideNotification, 3000);
+    setTimeout(onHideNotification, 200);
   }
 
   function onHideNotification() {
     setDisplay("none");
   }
+
+  function ClickWindow() {
+    console.log(display);
+    if (display == "flex") {
+      onHideNotification();
+    }
+  }
+  
+
 
 function onAddtoClickandCartList(){
     const qty = cart[product.id] ? cart[product.id] + 1 : 1;

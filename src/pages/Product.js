@@ -8,11 +8,13 @@ export default function Product() {
   const { products } = useContext(AppContext);
 
 
+  console.log(params);
+  console.log(products);
+
+
   const product = products.find(product => product.slug === params.slug);
 
-  if (!product) {
-    return <NotFound/>
-  }
+
 
 
   return(

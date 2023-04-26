@@ -13,6 +13,8 @@ export default function Notification({
     display: disp,
   };
 
+  
+
   return (
     <div className="modal-overlay" style={styles}>
       <div className="modal">
