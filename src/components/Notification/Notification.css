@@ -4,7 +4,7 @@
 
 
 
-.modal-overlay {
+.Notification .modal-overlay {
   display: none;
   position: fixed;
   top: -54px;
@@ -16,7 +16,7 @@
 }
 
 
-.modal {
+.Notification .modal {
   text-align: center;
   background-color: white;
   height: 473px;
@@ -26,31 +26,31 @@
   border-radius: 20px;
 }
 
-.close {
+.Notification .close {
   margin: 10% 0 0 16px;
   cursor: pointer;
 }
 
-.close-img {
+.Notification .close-img {
   width: 25px;
 }
 
-.check {
+.Notification .check {
   width: 150px;
 }
 
-.modal-overlay h6 {
+.Notification .modal-overlay h6 {
   font-weight: 500;
   font-size: 28px;
   margin: 20px 0;
 }
 
-.modal-overlay p {
+.Notification .modal-overlay p {
   font-size: 16px;
   margin: 29px 0;
 }
 
-.modal-overlay button {
+.Notification .modal-overlay button {
   background-color: #ac003e;
   width: 150px;
   height: 40px;

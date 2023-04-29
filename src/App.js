@@ -4,8 +4,8 @@ import Home from "./pages/Home";
 import Category from "./pages/Category";
 import NotFound from "./pages/NotFound";
 import { createContext, useEffect, useState } from "react";
-import { getDocs } from "firebase/firestore/lite";
-import { categoryCollection, onAuthChange, productsCollection ,ordersCollection} from "./firebase";
+import { getDocs } from "firebase/firestore";
+import { categoryCollection, onAuthChange, productsCollection ,ordersCollection, onCategoriesLoad, onProductsLoad, onOrdersLoad} from "./firebase";
 import Product from "./pages/Product";
 import Cart from "./pages/Cart";
 import ThankYou from "./pages/ThankYou";
@@ -49,28 +49,16 @@ function App() {
         )
       });
 
-    getDocs(productsCollection) // получить категории
-      .then(({ docs }) => { // когда категории загрузились
-        setProducts( // обновить состояние
-          docs.map(doc => ({ // новый массив
-            ...doc.data(), // из свойств name, slug
-            id: doc.id // и свойства id
-          }))
-        )
-      });
+    onCategoriesLoad(setCategories)
 
+    onProductsLoad(setProducts);
 
-      getDocs(ordersCollection) // получить категории
-      .then(({ docs }) => { // когда категории загрузились
-        setOrders( // обновить состояние
-          docs.map(doc => ({ // новый массив
-            ...doc.data(), // из свойств name, slug
-            id: doc.id // и свойства id
-          }))
-        )
-      });
+    onOrdersLoad(setOrders);
 
     onAuthChange(user => {
+      if (user) {
+        user.isAdmin = user.email === "azalimir693@gmail.com";
+      }
       setUser(user);
     });
   }, []);

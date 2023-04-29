@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import { AppContext } from "../../App";
+import AddProduct from "../AddProduct/AddProduct";
 import AddToCart from "../AddToCart/AddToCart";
 import "./ProductList.css"
 
@@ -11,9 +12,9 @@ export default function ProductList({ category }) {
 
   const output = products.filter(product => product.category === category.id).map(product => (
     <div className="Product">
-      <img className="carphoto" src={product.photo} alt={product.name}></img>
+      <img className="carphoto" src={product.photo0} alt={product.name}></img>
       <div className="info">
-        <NavLink to={'/product/' + product.slug} className="bold-weight">
+        <NavLink to={'/products/' + product.slug} className="bold-weight">
           {product.name}
         </NavLink>
         <span>{product.bodytype}</span>
@@ -27,6 +28,7 @@ export default function ProductList({ category }) {
   return (
     <div className="ProductList">
       {output}
+      <AddProduct/>
     </div>
   )
 }

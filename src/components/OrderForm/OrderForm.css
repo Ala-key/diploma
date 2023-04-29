@@ -19,14 +19,14 @@
 
 
 /* Heading styles */
-h1 {
+.cf h1 {
   text-align: center;
   color: #a8a8a8;
   text-shadow: 1px 1px 0 rgba(255, 255, 255, 1);
 }
 
 /* Form styles */
-form {
+.cf form {
   max-width: 600px;
   margin: 20px auto;
   text-align: center;
@@ -34,7 +34,7 @@ form {
   flex-direction: column;
 }
 
-form input {
+.cf form input {
   border: 0;
   outline: none;
   padding: 1em;
@@ -46,11 +46,11 @@ form input {
   resize: none;
 }
 
-form input:focus, form textarea:focus {
+.cf form input:focus, form textarea:focus {
   box-shadow: 0 0px 2px rgba(231, 76, 60, 1) !important;
 }
 
-form #input-submit {
+.cf form #input-submit {
   color: white;
   background: #e74c3c;
   cursor: pointer;
@@ -58,30 +58,30 @@ form #input-submit {
   width: 25%;
 }
 
-form #input-submit:hover {
+.cf form #input-submit:hover {
   box-shadow: 0 1px 1px 1px rgba(170, 170, 170, 0.6);
 }
 
-form textarea {
+.cf form textarea {
   height: 126px;
 }
 
 /* Grid styles */
-.half {
+.cf .half {
   margin: 0 auto;
   float: left;
   width: 48%;
   margin-bottom: 1em;
 }
 
-.right {
+.cf .right {
   width: 50%;
 }
 
 
 /* Media queries */
 @media (max-width: 480px) {
-  .half {
+  .cf .half {
       width: 100%;
       float: none;
       margin-bottom: 0;

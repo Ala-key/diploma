@@ -9,6 +9,7 @@ import { SiHonda } from "react-icons/si"
 import { SiBmw } from "react-icons/si"
 import { SiAudi } from "react-icons/si"
 import AddCategory from "../AddCategory/AddCategory";
+import DeleteCategory from "../DeleteCategory/DeleteCategory";
 
 
 
@@ -53,16 +54,10 @@ export default function CategoryList() {
           {icon}
           {category.name}
         </NavLink>
+        <DeleteCategory category={category}/>
       </li>
     );
   });
-    // const output = categories.map(category => (
-    //   <li key={category.id}>
-    //     <NavLink to={"/categories/" + category.slug}>
-    //       {category.name}
-    //     </NavLink>
-    //   </li>
-    // ));
 
 
   
@@ -72,9 +67,7 @@ export default function CategoryList() {
     <div className="CategoryList">
       <ul>
         {output}
-        <li>
           <AddCategory/>
-        </li>
       </ul>
 
     </div>
