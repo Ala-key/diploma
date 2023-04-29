@@ -1,11 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500&display=swap');
+
+
+* {
+  box-sizing: border-box;
+}
+
+
 .Product {
   display: flex;
   flex-direction: column;
 }
 
 
+.value {
+  color: black;
+  text-decoration: none;
+  font-size: 17px;
+  font-family: 'Oswald', sans-serif;
+  margin-bottom: 10px;
+}
+
 .Product #main-img {
-  max-width: 100%;
+  max-width: 76%;
 }
 
 
@@ -34,3 +50,30 @@
 .Product .carousel-button.right {
   background: linear-gradient(-85deg, rgba(0,0,0,0.5), transparent);
 }
+
+
+.Product table tr {
+
+    font-size: 18px;
+    height: 37px;
+
+}
+
+
+.bold {
+  font-weight: 500;
+  font-size: initial;
+}
+
+
+.Product table tr {
+  font-size: 18px;
+  height: 37px;
+
+}
+
+
+.Product table tr:nth-child(2n+1) {
+  background-color: antiquewhite;
+}
+

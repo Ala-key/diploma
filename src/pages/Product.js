@@ -61,14 +61,40 @@ export default function Product() {
            <img id="main-img" src={photos} alt={product.name} />
            <button onClick={onForwardReplacePhoto}  className="carousel-button right"><MdArrowForwardIos/></button>
         </div>
-
+        <h2>Specifications</h2>
        <table>
         <tbody>
             <tr>
-              <td>
-                Ценна
+              <td className="value">
+                Price
               </td>
-          
+              <td className="bold">
+                {product.price}$
+              </td>
+            </tr>
+            <tr>
+              <td className="value">
+                Body type
+              </td>
+              <td className="bold">
+                {product.bodytype}
+              </td>
+            </tr>
+            <tr>
+              <td className="value">
+                Year
+              </td>
+              <td className="bold">
+                {product.year}
+              </td>
+            </tr>
+            <tr>
+              <td className="value">
+                Build country
+              </td>
+              <td className="bold">
+                {product.buildcountry}
+              </td>
             </tr>
         </tbody>
        </table>
