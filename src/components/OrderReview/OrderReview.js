@@ -3,9 +3,9 @@ import { AppContext } from "../../App"
 import { reviewsCollection } from "../../firebase";
 import { addDoc } from "firebase/firestore";
 
-export default function OrderReview({productid}) {
+export default function OrderReview({ productid }) {
 
-  const { reviews,user } = useContext(AppContext);
+  const { reviews, user } = useContext(AppContext);
 
   const [review, setReview] = useState("");
 
@@ -15,14 +15,17 @@ export default function OrderReview({productid}) {
   const year = currentDate.getFullYear();
   const formattedDate = `${day}.${month}.${year}`;
 
+  
 
-
-  function onChangeCategory(event) {
+  function onChangeReview(event) {
     setReview(event.target.value);
   }
 
 
-  function onAddCategory() {
+
+
+
+  function onAddReview() {
     addDoc(reviewsCollection, {
       useravatar: user.photoURL,
       review: review,
@@ -34,16 +37,21 @@ export default function OrderReview({productid}) {
   }
 
 
-  return(
-    <div className="AddCategory">
-    <input
-      size="15"
-      type="text"
-      value={review}
-      placeholder="Category name"
-      onChange={onChangeCategory}
-    />
-    <button onClick={onAddCategory}>+</button>
-  </div>
+  return (
+    <div className="OrderReview">
+      <div className="sub-review">
+        <input
+          size="15"
+          type="text"
+          value={review}
+          placeholder="Category name"
+          onChange={onChangeReview}
+        />
+        <button onClick={onAddReview}>+</button>
+      </div>
+      <div className="view-reviews">
+         
+      </div>
+    </div>
   )
 }

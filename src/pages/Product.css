@@ -19,6 +19,12 @@
   margin-bottom: 10px;
 }
 
+
+
+.menu {
+  display: flex;
+}
+
 .Product #main-img {
   max-width: 76%;
 }

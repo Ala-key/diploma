@@ -2,14 +2,14 @@ import { useContext, useState } from "react";
 import { useMatch } from "react-router";
 import { AppContext } from "../App";
 import "./Product.css";
-import {MdArrowForwardIos} from "react-icons/md"
-import {MdArrowBackIos} from "react-icons/md"
+import { MdArrowForwardIos } from "react-icons/md"
+import { MdArrowBackIos } from "react-icons/md"
 import OrderReview from "../components/OrderReview/OrderReview"
 
 
 export default function Product() {
 
-  
+
   const { params } = useMatch("/products/:slug");
   const { products } = useContext(AppContext);
 
@@ -29,77 +29,97 @@ export default function Product() {
 
   const [photos, setPhotos] = useState(photoProps[0]);
   const [index, setIndex] = useState(0);
-  
-  
+
+
 
   function onForwardReplacePhoto() {
     if (index === photoProps.length - 1) {
       return;
     }
-  
+
     setIndex(index + 1);
-  
+
     setPhotos(photoProps[index + 1]);
   }
-  
+
   function onBackReplacePhoto() {
     if (index === 0) {
       return;
     }
-  
+
     setIndex(index - 1);
-  
+
     setPhotos(photoProps[index - 1]);
   }
 
 
+  const [showSpecification, setShowSpecification] = useState(true);
 
-  return(
+  const handleSpecificationClick = () => {
+    setShowSpecification(true);
+  };
+
+  const handleReviewClick = () => {
+    setShowSpecification(false);
+  };
+
+
+  return (
     <div className="Product">
-        <h1>{product.name}</h1>
-        <div className="border-img">
-           <button onClick={onBackReplacePhoto}   className="carousel-button"><MdArrowBackIos/></button>
-           <img id="main-img" src={photos} alt={product.name} />
-           <button onClick={onForwardReplacePhoto}  className="carousel-button right"><MdArrowForwardIos/></button>
+      <h1>{product.name}</h1>
+      <div className="border-img">
+        <button onClick={onBackReplacePhoto} className="carousel-button"><MdArrowBackIos /></button>
+        <img id="main-img" src={photos} alt={product.name} />
+        <button onClick={onForwardReplacePhoto} className="carousel-button right"><MdArrowForwardIos /></button>
+      </div>
+      <div className="menu">
+        <button onClick={handleSpecificationClick}>Specification</button>
+        <button onClick={handleReviewClick}>Review</button>
+      </div>
+      {showSpecification ? (
+        <div className="specification">
+          <h2>Specifications</h2>
+          <table>
+            <tbody>
+              <tr>
+                <td className="value">
+                  Price
+                </td>
+                <td className="bold">
+                  {product.price}$
+                </td>
+              </tr>
+              <tr>
+                <td className="value">
+                  Body type
+                </td>
+                <td className="bold">
+                  {product.bodytype}
+                </td>
+              </tr>
+              <tr>
+                <td className="value">
+                  Year
+                </td>
+                <td className="bold">
+                  {product.year}
+                </td>
+              </tr>
+              <tr>
+                <td className="value">
+                  Build country
+                </td>
+                <td className="bold">
+                  {product.buildcountry}
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
-        <h2>Specifications</h2>
-       <table>
-        <tbody>
-            <tr>
-              <td className="value">
-                Price
-              </td>
-              <td className="bold">
-                {product.price}$
-              </td>
-            </tr>
-            <tr>
-              <td className="value">
-                Body type
-              </td>
-              <td className="bold">
-                {product.bodytype}
-              </td>
-            </tr>
-            <tr>
-              <td className="value">
-                Year
-              </td>
-              <td className="bold">
-                {product.year}
-              </td>
-            </tr>
-            <tr>
-              <td className="value">
-                Build country
-              </td>
-              <td className="bold">
-                {product.buildcountry}
-              </td>
-            </tr>
-        </tbody>
-       </table>
-       <OrderReview productid={product.id}/>
+      ) : (
+        <OrderReview className="review-component" productid={product.id} />
+      )}
+
     </div>
   )
 }
