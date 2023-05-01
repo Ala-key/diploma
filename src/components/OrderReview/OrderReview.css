@@ -1,0 +1,106 @@
+.review {
+  display: grid;
+  margin-bottom: 10px;
+  grid-column-gap: 10px 20px 20px;
+  grid-template-columns: 6% 90%;
+  grid-row-gap: 0px;
+  grid-template-areas:
+      "image info"
+      "image review";
+  
+}
+
+.info {
+  grid-area: info;
+}
+
+
+
+
+.avatar {
+  grid-area: image;
+  height: 28px;
+  width: 29px;
+  background-color: gray;
+  border-radius: 20px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 5px;
+}
+
+.review #review {
+  grid-area: review;
+  font-family: "Roboto", "Arial", sans-serif;
+  font-size: 16px;
+  line-height: 1.8rem;
+  font-weight: 400;
+  margin: 0;
+  width: 659px;
+}
+
+
+.review #date {
+  white-space: nowrap;
+  font-family: "Roboto", "Arial", sans-serif;
+  font-size: 13px;
+  line-height: 1.8rem;
+  font-weight: 400;
+  color: #606060;
+}
+
+.review #name {
+  margin-right: 5px;
+  white-space: nowrap;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.8rem;
+  grid-area: name;
+}
+
+
+.view-reviews {
+  height: 500px;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+
+
+
+.sub-review {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    padding-left: 0;
+    margin: 22px 0;
+    border-bottom: 1px solid gray;
+  
+}
+
+
+.current-avatar {
+  height: 35px;
+  width: 35px;
+  background-color: gray;
+  border-radius: 20px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 5px;
+}
+
+.sub-review input {
+  height: 32px;     width: 87%; font-size: 17px;
+}
+
+
+.sub-review button {
+  height: 27px;
+  width: 31px;
+  color: red;
+  border-radius: 3px;
+  border: 1px solid red;
+  background: white;
+  margin-left: 3px;
+}

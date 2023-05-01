@@ -77,6 +77,10 @@
 
 }
 
+.Product table {
+  width: 100%;
+}
+
 
 .Product table tr:nth-child(2n+1) {
   background-color: antiquewhite;
