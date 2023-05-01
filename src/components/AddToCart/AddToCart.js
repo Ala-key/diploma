@@ -24,12 +24,7 @@ export default function AddToCart({ product }) {
     setDisplay("none");
   }
 
-  function ClickWindow() {
-    console.log(display);
-    if (display == "flex") {
-      onHideNotification();
-    }
-  }
+ 
   
 
 

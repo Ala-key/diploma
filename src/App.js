@@ -5,7 +5,7 @@ import Category from "./pages/Category";
 import NotFound from "./pages/NotFound";
 import { createContext, useEffect, useState } from "react";
 import { getDocs } from "firebase/firestore";
-import { categoryCollection, onAuthChange, productsCollection ,ordersCollection, onCategoriesLoad, onProductsLoad, onOrdersLoad, onReviewsLoad} from "./firebase";
+import { categoryCollection, onAuthChange, onCategoriesLoad, onProductsLoad, onOrdersLoad, onReviewsLoad} from "./firebase";
 import Product from "./pages/Product";
 import Cart from "./pages/Cart";
 import ThankYou from "./pages/ThankYou";

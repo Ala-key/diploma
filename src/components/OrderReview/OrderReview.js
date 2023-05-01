@@ -29,19 +29,21 @@ export default function OrderReview({ productid }) {
 
 
 
-  const output = reviews.filter(review => review.product === productid).map(review => (
-    styles.backgroundImage = `url(${review.useravatar})`,
-
-    <div className="review">
-      <div className="avatar" style={styles}></div>
-      <div className="info">
-        <span id="name">{review.name}</span>
-        <span id="date">{review.datacreate}</span>
+  const output = reviews.filter(review => review.product === productid).map(review => {
+    const styles = {
+      backgroundImage: `url(${review.useravatar})`
+    };
+    return (
+      <div className="review" key={review.id}>
+        <div className="avatar" style={styles}></div>
+        <div className="info">
+          <span id="name">{review.name}</span>
+          <span id="date">{review.datacreate}</span>
+        </div>
+        <p id="review">{review.review}</p>
       </div>
-      <p id="review">{review.review}</p>
-    </div>
-  ));
-
+    );
+  });
 
   function onAddReview() {
     addDoc(reviewsCollection, {
