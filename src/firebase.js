@@ -1,7 +1,7 @@
 // Import the functions you need from the SDKs you need
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection,onSnapshot } from 'firebase/firestore'
+import { getFirestore, collection, onSnapshot } from 'firebase/firestore'
 import { GoogleAuthProvider, getAuth, onAuthStateChanged, signInWithPopup, signOut } from 'firebase/auth';
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -29,11 +29,15 @@ const auth = getAuth(app);
 export const categoryCollection = collection(db, 'categories');
 export const productsCollection = collection(db, 'products');
 export const ordersCollection = collection(db, 'orders');
+export const reviewsCollection = collection(db, 'reviews');
+
+
 
 const provider = new GoogleAuthProvider();
 export const logIn = () => signInWithPopup(auth, provider);
 export const logOut = () => signOut(auth);
 export const onAuthChange = (callback) => onAuthStateChanged(auth, callback);
+
 export const onCategoriesLoad = (callback) =>
   onSnapshot(categoryCollection, (snapshot) =>
     callback(
@@ -44,7 +48,7 @@ export const onCategoriesLoad = (callback) =>
     )
   );
 
-  export const onProductsLoad = (callback) =>
+export const onProductsLoad = (callback) =>
   onSnapshot(productsCollection, (snapshot) =>
     callback(
       snapshot.docs.map((doc) => ({
@@ -55,8 +59,19 @@ export const onCategoriesLoad = (callback) =>
   );
 
 
-  export const onOrdersLoad = (callback) =>
+export const onOrdersLoad = (callback) =>
   onSnapshot(ordersCollection, (snapshot) =>
+    callback(
+      snapshot.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data(),
+      }))
+    )
+  );
+
+
+export const onReviewsLoad = (callback) =>
+  onSnapshot(reviewsCollection, (snapshot) =>
     callback(
       snapshot.docs.map((doc) => ({
         id: doc.id,

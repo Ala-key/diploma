@@ -4,6 +4,8 @@ import { AppContext } from "../App";
 import "./Product.css";
 import {MdArrowForwardIos} from "react-icons/md"
 import {MdArrowBackIos} from "react-icons/md"
+import OrderReview from "../components/OrderReview/OrderReview"
+
 
 export default function Product() {
 
@@ -55,7 +57,6 @@ export default function Product() {
   return(
     <div className="Product">
         <h1>{product.name}</h1>
-
         <div className="border-img">
            <button onClick={onBackReplacePhoto}   className="carousel-button"><MdArrowBackIos/></button>
            <img id="main-img" src={photos} alt={product.name} />
@@ -98,6 +99,7 @@ export default function Product() {
             </tr>
         </tbody>
        </table>
+       <OrderReview productid={product.id}/>
     </div>
   )
 }

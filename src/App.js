@@ -5,7 +5,7 @@ import Category from "./pages/Category";
 import NotFound from "./pages/NotFound";
 import { createContext, useEffect, useState } from "react";
 import { getDocs } from "firebase/firestore";
-import { categoryCollection, onAuthChange, productsCollection ,ordersCollection, onCategoriesLoad, onProductsLoad, onOrdersLoad} from "./firebase";
+import { categoryCollection, onAuthChange, productsCollection ,ordersCollection, onCategoriesLoad, onProductsLoad, onOrdersLoad, onReviewsLoad} from "./firebase";
 import Product from "./pages/Product";
 import Cart from "./pages/Cart";
 import ThankYou from "./pages/ThankYou";
@@ -16,6 +16,7 @@ export const AppContext = createContext({
   categories: [],
   products: [],
   orders: [],
+  reviews: [],
   // контекст для корзины
   cart: {}, // содержимое корзинки
   setCart: () => {}, // изменить содержимое корзики
@@ -27,6 +28,7 @@ function App() {
   const [categories, setCategories] = useState([]);
   const [products, setProducts] = useState([]);
   const [orders, setOrders] = useState([]);
+  const [reviews, setReviews] = useState([]);
 
   const [cart, setCart] = useState(() => {
     return JSON.parse(localStorage.getItem('cart')) || {};
@@ -55,6 +57,9 @@ function App() {
 
     onOrdersLoad(setOrders);
 
+    onReviewsLoad(setReviews);
+
+
     onAuthChange(user => {
       if (user) {
         user.isAdmin = user.email === "azalimir693@gmail.com";
@@ -63,9 +68,10 @@ function App() {
     });
   }, []);
 
+
   return (
     <div className="App">
-      <AppContext.Provider value={{ categories, products, cart, setCart, user, orders }}>
+      <AppContext.Provider value={{ categories, products, cart, setCart, user, orders, reviews }}>
         <Layout>
           <Routes>
             <Route path="/" element={<Home />} />
