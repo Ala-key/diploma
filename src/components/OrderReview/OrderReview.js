@@ -23,12 +23,6 @@ export default function OrderReview({ productid }) {
     setReview(event.target.value);
   }
 
-  let styles = {
-    backgroundImage: ""
-  };
-
-
-
   const output = reviews.filter(review => review.product === productid).map(review => {
     const styles = {
       backgroundImage: `url(${review.useravatar})`
