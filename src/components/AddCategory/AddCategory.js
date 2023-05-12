@@ -14,4 +14,12 @@ export default function AddCategory() {
   function onChangeCategory(event) {
     SetCategory(event.target.value);
   }
+
+
+  function onAddCategory() {
+    addDoc(categoryCollection, {name: category.trim(), slug: category.trim().replaceAll(" ","-").toLocaleLowerCase()}).then(() => {SetCategory("")});
+
+ }
+
+ 
 }
