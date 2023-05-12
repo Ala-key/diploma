@@ -8,7 +8,6 @@ export default function AddCategory() {
   const { user } = useContext(AppContext);
 
 
- 
-
+  if(!user || !user.isAdmin){ return null;}
 
 }
