@@ -10,4 +10,8 @@ export default function AddCategory() {
 
   if(!user || !user.isAdmin){ return null;}
 
+
+  function onChangeCategory(event) {
+    SetCategory(event.target.value);
+  }
 }
