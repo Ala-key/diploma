@@ -5,4 +5,5 @@ import { categoryCollection } from "../../firebase";
 
 export default function AddCategory() {
       const [category, SetCategory] = useState(""); 
+
 }
