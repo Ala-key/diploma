@@ -21,7 +21,23 @@ export default function AddToCart({ product }) {
     setTimeout(onHideNotification, 2000);
   }
 
-
+  return (
+    <div className="AddToCart">
+      <button onClick={onAddtoClickandCartList} className="buy">
+        buy
+      </button>
+      <button onClick={onAddtoClick} className="addtocart">
+        add to cart
+      </button>
+      <Notification
+        disp={display}
+        current={cart[product.id] ? cart[product.id] : 0}
+        allcount={total}
+        name={product.name}
+        onHideNotification={onHideNotification}
+      />
+    </div>
+  );
 
 
 
