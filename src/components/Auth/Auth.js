@@ -7,5 +7,17 @@ import CartLink from "../CartLink/CartLink";
 import { NavLink } from "react-router-dom";
 
 export default function Auth() {
-  
+  const { user } = useContext(AppContext);
+
+
+  let styles;
+
+  if (user) {
+    const backgroundImageUrl = user && user.photoURL ? `url(${user.photoURL})` : null;
+    styles = {
+      backgroundImage: backgroundImageUrl,
+      display: "block"
+      // и другие свойства
+    }
+  }
 }
