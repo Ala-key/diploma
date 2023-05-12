@@ -20,4 +20,15 @@ export default function Auth() {
       // и другие свойства
     }
   }
+
+  return (
+    <div className="Auth">
+      <NavLink to={"/orders"}>    
+          <div className="accountImage mar-right" style={styles}></div>
+      </NavLink>
+      {user ? <CartLink  className="mar-right"/> : null}
+      {!user ? <button onClick={logIn} className="signIn">Sign in</button> : null}
+      {user ? <button className="signOut" onClick={logOut}><ImExit /></button> : null}
+    </div>
+  );
 }
