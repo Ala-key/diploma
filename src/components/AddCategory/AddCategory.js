@@ -8,7 +8,7 @@ export default function AddCategory() {
   const { user } = useContext(AppContext);
 
 
-  if(!user || !user.isAdmin){ return null;}
+  if (!user || !user.isAdmin) { return null; }
 
 
   function onChangeCategory(event) {
@@ -17,9 +17,18 @@ export default function AddCategory() {
 
 
   function onAddCategory() {
-    addDoc(categoryCollection, {name: category.trim(), slug: category.trim().replaceAll(" ","-").toLocaleLowerCase()}).then(() => {SetCategory("")});
+    addDoc(categoryCollection, { name: category.trim(), slug: category.trim().replaceAll(" ", "-").toLocaleLowerCase() }).then(() => { SetCategory("") });
 
- }
+  }
 
- 
+
+  return (
+    <div className="AddCategory">
+      <input type="text"
+        size="15"
+        value={category}
+        placeholder="Category name"
+        onChange={onChangeCategory} />
+      <button onClick={onAddCategory}>+</button>
+    </div>)
 }
