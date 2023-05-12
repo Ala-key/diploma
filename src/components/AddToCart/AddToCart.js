@@ -20,4 +20,7 @@ export default function AddToCart({ product }) {
     setDisplay("flex");
     setTimeout(onHideNotification, 2000);
   }
+
+
+ 
 }
