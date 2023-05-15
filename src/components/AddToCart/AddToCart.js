@@ -9,7 +9,7 @@ export default function AddToCart({ product }) {
   const [display, setDisplay] = useState("none");
 
   const total = Object.values(cart).reduce((acc, num) => acc + num, 0);
-  const navigate = useNavigate();
+
 
   function onAddtoClick() {
     const qty = cart[product.id] ? cart[product.id] + 1 : 1;
