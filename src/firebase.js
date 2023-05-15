@@ -3,6 +3,8 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore, collection, onSnapshot } from 'firebase/firestore'
 import { GoogleAuthProvider, getAuth, onAuthStateChanged, signInWithPopup, signOut } from 'firebase/auth';
+import { getStorage, ref, uploadBytes, getDownloadURL } from 'firebase/storage';
+
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -37,6 +39,7 @@ const provider = new GoogleAuthProvider();
 export const logIn = () => signInWithPopup(auth, provider);
 export const logOut = () => signOut(auth);
 export const onAuthChange = (callback) => onAuthStateChanged(auth, callback);
+const storage = getStorage(app); // Initialize Firebase Storage
 
 export const onCategoriesLoad = (callback) =>
   onSnapshot(categoryCollection, (snapshot) =>
@@ -59,6 +62,9 @@ export const onProductsLoad = (callback) =>
   );
 
 
+  
+
+
 export const onOrdersLoad = (callback) =>
   onSnapshot(ordersCollection, (snapshot) =>
     callback(
@@ -79,3 +85,19 @@ export const onReviewsLoad = (callback) =>
       }))
     )
   );
+
+
+
+
+
+// отправка фотографии и получение ее url
+export const uploadProductPhoto = (file) => {
+  const storageRef = ref(storage, `products/${file.name}`);
+  return uploadBytes(storageRef, file)
+    .then(() => {
+      return getDownloadURL(storageRef);
+    })
+    .catch((error) => {
+      console.log("Failed to upload product photo:", error);
+    });
+};

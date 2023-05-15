@@ -1,19 +1,16 @@
+import React from "react";
 import "./Notification.css";
 import check from "../../assets/check-icon.png";
-
 
 export default function Notification({
   current,
   allcount,
   name,
   disp,
-  onHideNotification,
 }) {
   const styles = {
     display: disp,
   };
-
-  
 
   return (
     <div className="modal-overlay" style={styles}>
@@ -26,8 +23,7 @@ export default function Notification({
             <strong>{name} in cart:</strong> {current}
           </p>
           <p>
-            <strong>General cars in cart :</strong>
-            {allcount}
+            <strong>General cars in cart:</strong> {allcount}
           </p>
         </div>
       </div>

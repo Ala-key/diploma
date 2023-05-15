@@ -1,34 +1,58 @@
 import { addDoc } from "firebase/firestore";
-import { useContext, useState } from "react"
-import { AppContext } from "../../App";
+import { useContext, useState } from "react";
 import { categoryCollection } from "../../firebase";
+import { AppContext } from "../../App";
 
-export default function AddCategory() {
-  const [category, SetCategory] = useState("");
-  const { user } = useContext(AppContext);
+const AddCategory = () => {
+   const { user } = useContext(AppContext);
+   const [category, setCategory] = useState("");
+   const [isSubmitting, setIsSubmitting] = useState(false);
 
+   if (!user || !user.isAdmin) {
+     return null;
+   }
 
-  if (!user || !user.isAdmin) { return null; }
+   function onChangeCategory(event) {
+     setCategory(event.target.value);
+   }
 
+   function onAddCategory() {
+     const name = category.trim();
 
-  function onChangeCategory(event) {
-    SetCategory(event.target.value);
-  }
+     if (name.length < 5) {
+       alert(
+         "Please provide a category name with minimum length of 5 characters."
+       );
+      
+       return;
+     }
 
+     setIsSubmitting(true);
 
-  function onAddCategory() {
-    addDoc(categoryCollection, { name: category.trim(), slug: category.trim().replaceAll(" ", "-").toLocaleLowerCase() }).then(() => { SetCategory("") });
+     addDoc(categoryCollection, {
+       name:name,
+       slug: name.replaceAll(" ", "-").toLocaleLowerCase(),
+     }).then(() => {
+       setCategory("");
+     }).finally(() => {
+       setIsSubmitting(false);
+     });
+   }
 
-  }
+   return (
+     <div className="AddCategory">
+       <input
+         size="15"
+         type="text"
+         value={category}
+         placeholder="Category name"
+         onChange={onChangeCategory}
+       />
+       <button onClick={onAddCategory} disabled={isSubmitting}>
+         +
+       </button>
+     </div>
+   );
+};
 
-
-  return (
-    <div className="AddCategory">
-      <input type="text"
-        size="15"
-        value={category}
-        placeholder="Category name"
-        onChange={onChangeCategory} />
-      <button onClick={onAddCategory}>+</button>
-    </div>)
-}
+export default AddCategory;
