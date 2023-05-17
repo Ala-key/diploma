@@ -29,6 +29,7 @@ export default function ProductList({ category }) {
     <div className="ProductList">
       {output}
       <AddProduct/>
+    
     </div>
   )
 }

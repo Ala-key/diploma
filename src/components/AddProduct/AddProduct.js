@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { AppContext } from "../../App";
 import { productsCollection, uploadProductPhoto } from "../../firebase";
 import { addDoc } from "firebase/firestore";
+import "./AddProduct.css";
 
 export default function AddProduct({ category }) {
   const { user } = useContext(AppContext);
@@ -59,41 +60,32 @@ export default function AddProduct({ category }) {
 
   return (
     <div className="AddProduct">
-      <form onSubmit={onFormSubmit}>
+      <form className="cf" onSubmit={onFormSubmit}>
         <h3>Create a new product</h3>
-        <label>
-          Name:
-          <input
-            type="text"
-            value={name}
-            name="name"
-            onChange={onChangeName}
-            required
-          />
-        </label>
-        <label>
-          Price:
+        <div className="half left cf">
+          <input type="text" name="name"    required onChange={onChangeName} id="input-name"   value={name} placeholder="Name" />
+
           <input
             type="number"
             value={price}
             name="price"
+            id="input-email"
             onChange={onChangePrice}
             min={0}
             required
           />
-        </label>
-        <label>
-          Picture:
-          <input
+           <input
+           id="input-subject"
             type="file"
             name="picture"
             onChange={onChangePicture}
             required
           />
-        </label>
-        <button type="submit" disabled={isSubmitting}>
-          {isSubmitting ? "Submitting..." : "Submit"}
-        </button>
+
+        </div>
+          
+        <button type="submit"  id="input-submit" >Add</button>
+
       </form>
     </div>
   );

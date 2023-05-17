@@ -4,11 +4,16 @@ import Logo from "../../Logo/Logo";
 import CategoryList from "../CategoryList/CategoryList";
 import Auth from "../Auth/Auth";
 import video from "../../assets/Autos.mp4"
+import { PopupCategory } from "../PopupCategory/PopupCategory";
+
 
 
 export default function Layout({ children }) {
   return (
     <div className="Layout">
+      <div className="popup">
+      <PopupCategory className="popup"/>
+      </div>
       <header>
         <Logo></Logo>
         <Nav></Nav>
@@ -16,6 +21,7 @@ export default function Layout({ children }) {
           <Auth />
         </div>
       </header>
+      
       <div className="video">
          <h1>Choose us Choose safety Choose comfort</h1>
         <video autoPlay muted loop>
