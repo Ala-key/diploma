@@ -12,9 +12,10 @@ export default function AddProduct({ category }) {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   if (!user || !user.isAdmin) {
+    if (isSubmitting) {
+      console.log("Hello")
+    }
     return null;
-    let ret = isSubmitting;
-    console.log(ret);
   }
 
 
