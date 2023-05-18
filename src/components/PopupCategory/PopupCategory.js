@@ -11,6 +11,7 @@ export function PopupCategory() {
 
 
   function handleMouseMove(event) {
+    document.body.style.overflow = "hidden";
 
     const x = event.clientX;
     const y = event.clientY;
