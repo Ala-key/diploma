@@ -12,9 +12,6 @@ export function PopupCategory() {
   function handleMouseMove(event) {
     document.body.style.position = "fixed";
   
-    const x = event.clientX;
-    const y = event.clientY;
-  
     setTranslateState((prev) => prev + 1);
    
 
