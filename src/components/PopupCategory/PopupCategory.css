@@ -7,14 +7,17 @@
 }
 
 
-
+.mobile-no-scroll {
+  overflow: hidden;
+}
 
 
 .PopupCategory {
   background-image: url(../../assets/door-garage.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  position: fixed;
+  position: absolute;
+  z-index: 1;
   width: 100%;
   left: 0;
   height: 100vh;
