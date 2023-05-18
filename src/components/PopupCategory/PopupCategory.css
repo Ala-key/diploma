@@ -11,6 +11,10 @@
   overflow: hidden;
 }
 
+body {
+  overflow: hidden;
+}
+
 
 .PopupCategory {
   background-image: url(../../assets/door-garage.jpg);
