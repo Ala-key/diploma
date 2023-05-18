@@ -27,7 +27,6 @@ export function PopupCategory() {
 
     popup.style.transform = `translateY(-${tranlatestate}vh)`;
   
-    setCoordinates({ x, y });
   }
 
 
