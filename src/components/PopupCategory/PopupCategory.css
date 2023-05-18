@@ -1,19 +1,35 @@
 .PopupCategory .Nav .NavItem a {
   text-decoration: none;
-  color: #a70403;
+    color: white;
+    text-align: center;
+    font-family: math;
+    font-size: 16px;
 }
 
 
+
+
+
 .PopupCategory {
-  grid-area: popup;
-  background-image: url(http://localhost:3000/static/media/door-garage.54c80bf….jpg);
+  background-image: url(../../assets/door-garage.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  position: absolute;
+  position: fixed;
   width: 100%;
   left: 0;
   height: 100vh;
   top: 0;
+}
+
+
+
+#open-garage-door {
+  background-color: white;
+  height: 37px;
+  width: 70px;
+  position: absolute;
+  bottom: 0;
+
 }
 
 .PopupCategory .Nav .NavItem a:active {
@@ -28,7 +44,6 @@
 
 .PopupCategory .Nav ul {
   display: flex;
-  align-items: center;
   flex-direction: column;
   padding: 0px;
   margin-top: 4%;
