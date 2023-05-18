@@ -6,23 +6,28 @@ import { useState } from "react";
 
 export function PopupCategory() {
   const [coordinates, setCoordinates] = useState({ x: 0, y: 0 });
-  const [heightState, setHeightState] = useState(100);
+  const [tranlatestate, setTranslateState] = useState(0);
 
 
 
   function handleMouseMove(event) {
-    document.body.style.overflow = "hidden";
-
+    document.body.style.position = "fixed";
+  
     const x = event.clientX;
     const y = event.clientY;
+  
+    setTranslateState((prev) => prev + 1);
+   
 
-
-    setHeightState((prev) => prev - 1);
-    console.log(heightState);
     const popup = document.querySelector(".PopupCategory");
-    popup.style.height = heightState + "vh";
 
+    if(tranlatestate >= 105) {
+      document.body.style.position = "static";
+      return;
+    }
 
+    popup.style.transform = `translateY(-${tranlatestate}vh)`;
+  
     setCoordinates({ x, y });
   }
 
@@ -51,8 +56,6 @@ export function PopupCategory() {
           </li>
         </ul>
       </nav>
-      <button id="open-garage-door" >Click me X - {coordinates.x}  Y - {coordinates.y}</button>
-
     </div>
   )
 }

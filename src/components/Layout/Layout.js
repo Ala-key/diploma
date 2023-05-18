@@ -11,9 +11,7 @@ import { PopupCategory } from "../PopupCategory/PopupCategory";
 export default function Layout({ children }) {
   return (
     <div className="Layout">
-      <div className="popup">
       <PopupCategory className="popup"/>
-      </div>
       <header>
         <Logo></Logo>
         <Nav></Nav>
