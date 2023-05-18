@@ -5,7 +5,6 @@ import { useState } from "react";
 
 
 export function PopupCategory() {
-  const [coordinates, setCoordinates] = useState({ x: 0, y: 0 });
   const [tranlatestate, setTranslateState] = useState(0);
 
 
