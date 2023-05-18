@@ -14,7 +14,7 @@ export default function AddProduct({ category }) {
   if (!user || !user.isAdmin) {
     return null;
     let ret = isSubmitting;
-    
+    console.log(ret);
   }
 
 
