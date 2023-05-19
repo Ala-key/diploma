@@ -34,6 +34,9 @@ export function PopupCategory({ open, toggle, toggleFalse }) {
       document.body.style.position = "static";
       popup.style.transform = "";
       popup.style.transition = "2s ease-out 0s";
+      toggleFalse();
+      setTranslateState(0);
+      return;
     }
 
   };
