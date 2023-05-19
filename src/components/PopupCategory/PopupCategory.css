@@ -1,0 +1,66 @@
+.PopupCategory .Nav .NavItem a {
+  text-decoration: none;
+    color: white;
+    text-align: center;
+    font-family: math;
+    font-size: 21px;
+
+
+}
+
+
+
+.PopupCategory {
+  background-image: url(https://static.vecteezy.com/system/resources/thumbnails/001/901/983/small/metallic-roller-shutter-door-free-photo.JPG);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  left: 0;
+  height: 100vh;
+  top: 0;
+  transition: transform 2s;
+  transform: translateY(-1058px);
+}
+
+
+
+#open-garage-door {
+  background-color: white;
+  height: 37px;
+  width: 70px;
+  position: absolute;
+  bottom: 0;
+
+}
+
+.PopupCategory .Nav .NavItem a:active {
+  color: #a70403;
+}
+
+
+.open {
+ transform: translateY(0px);
+}
+
+
+.PopupCategory .Nav .NavItem {
+  list-style: none;
+  padding: 32px;
+  text-align: center;
+}
+
+.PopupCategory .Nav ul {
+  display: flex;
+  flex-direction: column;
+  padding: 0px;
+  margin-top: 4%;
+}
+
+
+
+
+.PopupCategory .Nav {
+  margin-top: 80px;
+}
