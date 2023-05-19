@@ -19,7 +19,8 @@ export function PopupCategory({ open, toggle, toggleFalse }) {
 
   const handleMouseMove = () => {
     
-    
+       document.body.style.position = "fixed";
+
   };
   
   return (
