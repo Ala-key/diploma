@@ -3,16 +3,22 @@ import "./Layout.css"
 import Logo from "../../Logo/Logo";
 import CategoryList from "../CategoryList/CategoryList";
 import Auth from "../Auth/Auth";
+import Drawer from "../Drawer/Drawer";
+import NavToggle from "../NavToggle/NavToggle";
 import video from "../../assets/Autos.mp4"
 import { PopupCategory } from "../PopupCategory/PopupCategory";
+import { useState } from "react";
 
 
 
 export default function Layout({ children }) {
+ 
+
   return (
     <div className="Layout">
-      <PopupCategory className="popup"/>
+      
       <header>
+        
         <Logo></Logo>
         <Nav></Nav>
         <div id="icons">
