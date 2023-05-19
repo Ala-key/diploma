@@ -15,6 +15,32 @@ export function PopupCategory({ open, toggle, toggleFalse }) {
      }    
   }
 
+
+
+  const handleMouseMove = () => {
+    
+    
+  };
   
+  return (
+    <div className={popupClassNames} onTouchMove={handleMouseMove}>
+      <nav className="Nav">
+        <ul>
+          <li onClick={onClosePopup} className="NavItem">
+            <NavLink to="/">Home</NavLink>
+          </li>
+          <li onClick={onClosePopup} className="NavItem">
+            <NavLink to="/about">About</NavLink>
+          </li>
+          <li onClick={onClosePopup} className="NavItem">
+            <NavLink to="/contacts">Contacts</NavLink>
+          </li>
+          <li onClick={onClosePopup} className="NavItem">
+            <NavLink to="/delivery">Delivery</NavLink>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  );
 
 }
