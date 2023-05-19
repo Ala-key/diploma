@@ -39,6 +39,8 @@ export function PopupCategory({ open, toggle, toggleFalse }) {
       return;
     }
 
+    popup.style.transform = `translateY(-${translateState}vh)`;
+
   };
 
   return (
