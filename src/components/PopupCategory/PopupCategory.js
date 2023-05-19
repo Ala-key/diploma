@@ -31,7 +31,9 @@ export function PopupCategory({ open, toggle, toggleFalse }) {
 
 
     if (translateState >= 90 && translateState <= 115) {
-   
+      document.body.style.position = "static";
+      popup.style.transform = "";
+      popup.style.transition = "2s ease-out 0s";
     }
 
   };
