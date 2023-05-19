@@ -12,7 +12,16 @@ import { useState } from "react";
 
 
 export default function Layout({ children }) {
- 
+  const [drawerOpen, setDrawerOpen] = useState(false);
+
+  
+  function toggleDrawer() {
+    setDrawerOpen(!drawerOpen);
+  }
+
+  function toggleFalse () {
+    setDrawerOpen(false);
+  }
 
   return (
     <div className="Layout">
