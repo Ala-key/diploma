@@ -29,6 +29,11 @@ export function PopupCategory({ open, toggle, toggleFalse }) {
 
     popup.style.transition = "transform 0s ease-out 0s";
 
+
+    if (translateState >= 90 && translateState <= 115) {
+   
+    }
+
   };
 
   return (
