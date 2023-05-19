@@ -21,6 +21,9 @@ export function PopupCategory({ open, toggle, toggleFalse }) {
     
        document.body.style.position = "fixed";
 
+
+       setTranslateState((prev) => prev + 1);
+
   };
   
   return (
