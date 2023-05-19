@@ -27,7 +27,8 @@ export default function Layout({ children }) {
     <div className="Layout">
       
       <header>
-        
+        <PopupCategory open={drawerOpen} toggle={toggleDrawer} toggleFalse={toggleFalse}  className="popup"/>
+        <NavToggle callback={toggleDrawer} />
         <Logo></Logo>
         <Nav></Nav>
         <div id="icons">
