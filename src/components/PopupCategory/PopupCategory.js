@@ -3,29 +3,34 @@ import { NavLink } from "react-router-dom";
 import { useState } from "react";
 
 export function PopupCategory({ open, toggle, toggleFalse }) {
-  
+
   const [translateState, setTranslateState] = useState(0);
 
 
 
   function onClosePopup() {
-     if (translateState === 0) {
+    if (translateState === 0) {
       document.querySelector(".PopupCategory").classList.remove("open");
       toggle();
-     }    
+    }
   }
 
 
 
   const handleMouseMove = () => {
-    
-       document.body.style.position = "fixed";
+
+    document.body.style.position = "fixed";
 
 
-       setTranslateState((prev) => prev + 1);
+    setTranslateState((prev) => prev + 1);
+
+
+    const popup = document.querySelector(".PopupCategory");
+
+    popup.style.transition = "transform 0s ease-out 0s";
 
   };
-  
+
   return (
     <div className={popupClassNames} onTouchMove={handleMouseMove}>
       <nav className="Nav">
