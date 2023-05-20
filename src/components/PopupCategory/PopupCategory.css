@@ -1,12 +1,15 @@
-.PopupCategory .Nav .NavItem a {
+.PopupCategory #Nav .NavItem a {
   text-decoration: none;
-    color: white;
-    text-align: center;
-    font-family: math;
-    font-size: 21px;
+  color: white;
+  text-align: center;
+  font-family: math;
+  text-shadow: -3px -2px 0px black;
+  font-size: 29px;
 
 
 }
+
+
 
 
 
@@ -35,8 +38,9 @@
 
 }
 
-.PopupCategory .Nav .NavItem a:active {
-  color: #a70403;
+.PopupCategory #Nav .NavItem a:active {
+  color: black;
+  
 }
 
 
@@ -45,13 +49,13 @@
 }
 
 
-.PopupCategory .Nav .NavItem {
+.PopupCategory #Nav .NavItem {
   list-style: none;
   padding: 32px;
   text-align: center;
 }
 
-.PopupCategory .Nav ul {
+.PopupCategory #Nav ul {
   display: flex;
   flex-direction: column;
   padding: 0px;
@@ -61,6 +65,7 @@
 
 
 
-.PopupCategory .Nav {
+.PopupCategory #Nav {
+  width: 79%;
   margin-top: 80px;
 }
