@@ -5,25 +5,21 @@
 
 
 .Notification .modal-overlay {
-  display: none;
-  position: fixed;
-  top: -54px;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  justify-content: center;
-  background-color: rgba(0,0,0,0.4);
+  background: white;
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 50%;
+  left: 50%;
 }
 
 
 .Notification .modal {
-  text-align: center;
-  background-color: white;
-  height: 473px;
-  width: 373px;
-  margin-top: 10%;
-  padding: 27px 0;
-  border-radius: 20px;
+  position: fixed;
+  top: 8%;
+  left: 42%;
+  background-color: wheat;
+  z-index: 1;
 }
 
 .Notification .close {
@@ -36,7 +32,11 @@
 }
 
 .Notification .check {
-  width: 150px;
+  text-align: center;
+  width: 180px;
+  margin-left: 48px;
+  margin-top: 11px;
+
 }
 
 .Notification .modal-overlay h6 {

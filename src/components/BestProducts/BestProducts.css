@@ -1,0 +1,136 @@
+.slider {
+  align-items: center;
+  border: 1px solid red;
+  box-sizing: border-box;
+  display: flex;
+  height: 249px;
+  max-width: 950px;
+  overflow: hidden;
+  position: relative;
+}
+
+.slider-img {
+
+    height: auto;
+    position: absolute;
+    transition: all 1.2s;
+    width: 100%;
+}
+
+.slider-img-prev {
+  transform: translateX(-100%);
+}
+
+.slider-img-next {
+  transform: translateX(100%);
+}
+
+
+
+
+.slider-img-container {
+  position: relative;
+  display: inline-block;
+}
+
+.slider-img-container img {
+  display: block;
+  width: 78%;
+}
+
+.slider-img-container span {
+  position: absolute;
+  bottom: 3%;
+  left: 16%;
+  width: 100%;
+  text-align: center;
+  font-family: "math";
+  padding: 10px;
+  color: black;
+  font-size: 45px;
+  font-weight: bold;
+  /* text-shadow: 10px 10px 5px rgba(0, 0, 0, 0.5); */
+  animation: text-animation 3.9s ease-in-out infinite;
+}
+
+@keyframes text-animation {
+  0% {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+}
+
+/* Добавим плавный переход между слайдами */
+.slider-img {
+  transition: all 2.8s ease-in-out;
+}
+
+/* Добавим тень для эффекта глубины */
+.slider-img-container {
+  padding-left: 25%;
+}
+
+/* Добавим кнопки для переключения между слайдами */
+.slider-controls {
+  position: absolute;
+  top: 97%;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.slider-control {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  margin: 0 10px;
+  background-color: gray;
+  cursor: pointer;
+  transition: all 1s ease-in-out;
+}
+
+.slider-control:hover {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.slider-control.active {
+  background-color: #a70403;
+}
+@media screen and (max-width: 768px) {
+  .slider {
+    height: 300px;
+  }
+  .slider-img-container span {
+    font-size: 35px;
+  }
+  .slider-control {
+    width: 10px;
+    height: 10px;
+    margin: 0 5px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .slider {
+    height: 200px;
+  }
+  .slider-img-container span {
+    font-size: 25px;
+  }
+  .slider-control {
+    width: 8px;
+    height: 8px;
+    margin: 0 3px;
+  }
+}   

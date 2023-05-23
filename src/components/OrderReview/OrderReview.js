@@ -40,6 +40,9 @@ export default function OrderReview({ productid }) {
   });
 
   function onAddReview() {
+    if (review === "") {
+      return;
+    }
     addDoc(reviewsCollection, {
       useravatar: user.photoURL,
       review: review,

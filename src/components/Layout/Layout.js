@@ -9,6 +9,8 @@ import { PopupCategory } from "../PopupCategory/PopupCategory";
 import { useState } from "react";
 import video from "../../assets/Autos.mp4"
 import { useMatch } from 'react-router-dom';
+import BestProducts from "../BestProducts/BestProducts";
+import {AiTwotoneStar} from "react-icons/ai"
 
 
 
@@ -18,6 +20,8 @@ export default function Layout({ children }) {
 
   const match = useMatch('/');
 
+  const categ = useMatch('/categories/:car')
+
   function toggleDrawer() {
     setDrawerOpen(!drawerOpen);
   }
@@ -25,6 +29,8 @@ export default function Layout({ children }) {
   function toggleFalse() {
     setDrawerOpen(false);
   }
+
+  console.log(categ);
 
   return (
     <div className="Layout">
@@ -39,19 +45,27 @@ export default function Layout({ children }) {
         </div>
       </header>
 
-     
 
-      {match === null ? null : (
-        <container>
+
+      {match === null && categ === null ? null : (
+        <div className="container">
           <div className="video">
             <h1>Choose us Choose safety Choose comfort</h1>
             <video autoPlay muted loop>
               <source src={video} type="video/mp4" />
             </video>
           </div>
-        </container>
+          <div className="bestProductsList">
+            <h1 className="slider-slogan"><AiTwotoneStar color="#a70403"/>Our best selling machines</h1>
+            <BestProducts />
+          </div>
+        </div>
       )}
-     
+
+
+
+
+
 
       <aside>
         <CategoryList></CategoryList>
