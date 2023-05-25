@@ -11,7 +11,6 @@ import Cart from "./pages/Cart";
 import ThankYou from "./pages/ThankYou";
 import Orders from "./pages/Orders";
 import AboutUs from "./components/AboutUs/AboutUs";
-import Contacts from "./pages/Contacts";
 import ContactUs from "./components/ContactsUs/ContactUs";
 
 // Создать контекст, который будет хранить данные.
