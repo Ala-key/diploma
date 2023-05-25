@@ -3,7 +3,6 @@ import "./Layout.css"
 import Logo from "../../Logo/Logo";
 import CategoryList from "../CategoryList/CategoryList";
 import Auth from "../Auth/Auth";
-import Drawer from "../Drawer/Drawer";
 import NavToggle from "../NavToggle/NavToggle";
 import { PopupCategory } from "../PopupCategory/PopupCategory";
 import { useState } from "react";
@@ -68,7 +67,7 @@ export default function Layout({ children }) {
       )}
 
 
-      {about != null ? null : (
+      {about != null || contacts != null ? null : (
         <aside>
           <CategoryList></CategoryList>
         </aside>

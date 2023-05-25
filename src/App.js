@@ -12,6 +12,7 @@ import ThankYou from "./pages/ThankYou";
 import Orders from "./pages/Orders";
 import AboutUs from "./components/AboutUs/AboutUs";
 import Contacts from "./pages/Contacts";
+import ContactUs from "./components/ContactsUs/ContactUs";
 
 // Создать контекст, который будет хранить данные.
 export const AppContext = createContext({
@@ -79,7 +80,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/cart" element={<Cart />} />
             <Route path="/about" element={<AboutUs/>} />
-            <Route path="/contacts" element={<Contacts/>} />
+            <Route path="/contacts" element={<ContactUs/>} />
             <Route path="/delivery" element={<h1>Delivery</h1>} />
             <Route path="/categories/:slug" element={<Category />} />
             <Route path="/products/:slug" element={<Product />} />

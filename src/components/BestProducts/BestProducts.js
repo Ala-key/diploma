@@ -1,5 +1,4 @@
 import { useContext, useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
 import { AppContext } from "../../App";
 import "./BestProducts.css";
 
@@ -47,10 +46,6 @@ export default function BestProducts() {
 
   const prevImgIndex = activeIndex ? activeIndex - 1 : img.length - 1;
   const nextImgIndex = activeIndex === img.length - 1 ? 0 : activeIndex + 1;
-
-  const handleControlClick = (index) => {
-    setActiveIndex(index);
-  };
 
   return (
     <div className="slider">
