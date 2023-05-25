@@ -9,7 +9,7 @@ const AboutUs = () => {
     <div className="about-us">
       <div className="about-content">
         <div className="about-text">
-          <h3>Welcome to Our Online Auto Shop!</h3>
+          <h3 className='title'>Welcome to Our Online Auto Shop!</h3>
           <p>
             Welcome to Auto Mania, your premier destination for all your automotive needs. At Auto Mania, we are passionate about cars and providing exceptional services to ensure your vehicle runs smoothly and efficiently.
           </p>

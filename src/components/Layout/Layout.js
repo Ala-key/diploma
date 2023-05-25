@@ -25,6 +25,8 @@ export default function Layout({ children }) {
 
   const about = useMatch('/about')
 
+  const contacts = useMatch('/contacts')
+
   function toggleDrawer() {
     setDrawerOpen(!drawerOpen);
   }
