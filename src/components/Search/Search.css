@@ -1,12 +1,14 @@
 .Search {
-  background-color: #faba34;
+  background-color: white;
   margin: auto 50px;
   border-radius: 15px;
+  border: 1px solid #a70403;
   position: relative;
   max-height: 30px;
   white-space: nowrap;
   box-sizing: border-box;
 }
+
 .Search input {
   background: none;
   border: 0;
@@ -33,11 +35,7 @@
 .Search input::placeholder {
   color: #064d54;
 }
-@media screen and (max-width: 1199px) {
-  .Search {
-    margin: 20px;
-  }
-}
+
 @media screen and (max-width: 999px) {
   .Search {
     width: 200px;

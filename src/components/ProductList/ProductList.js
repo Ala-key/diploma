@@ -1,7 +1,6 @@
 import { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import { AppContext } from "../../App";
-import AddProduct from "../AddProduct/AddProduct";
 import AddToCart from "../AddToCart/AddToCart";
 import "./ProductList.css"
 
@@ -28,7 +27,6 @@ export default function ProductList({ category }) {
   return (
     <div className="ProductList">
       {output}
-      <AddProduct/>
     
     </div>
   )

@@ -26,6 +26,8 @@ export default function Layout({ children }) {
 
   const contacts = useMatch('/contacts')
 
+  const cart = useMatch('/cart')
+
   function toggleDrawer() {
     setDrawerOpen(!drawerOpen);
   }
@@ -67,7 +69,7 @@ export default function Layout({ children }) {
       )}
 
 
-      {about != null || contacts != null ? null : (
+      {about != null || contacts != null || cart != null ? null : (
         <aside>
           <CategoryList></CategoryList>
         </aside>

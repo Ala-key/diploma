@@ -12,7 +12,7 @@
 }
 
 .bestProductsList {
-  width: 947px;
+  max-width: 947px;
   margin-bottom: 99px;
 }
 
@@ -150,8 +150,6 @@
 
 .Layout main {
   grid-area: main;
+  margin-bottom: 99px;
 }
 
-.Layout main {
-  grid-area: main;
-}
