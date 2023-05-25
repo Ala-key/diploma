@@ -10,7 +10,8 @@ import { useState } from "react";
 import video from "../../assets/Autos.mp4"
 import { useMatch } from 'react-router-dom';
 import BestProducts from "../BestProducts/BestProducts";
-import {AiTwotoneStar} from "react-icons/ai"
+import { AiTwotoneStar } from "react-icons/ai"
+import Footer from "../../pages/Footer";
 
 
 
@@ -21,6 +22,8 @@ export default function Layout({ children }) {
   const match = useMatch('/');
 
   const categ = useMatch('/categories/:car')
+
+  const about = useMatch('/about')
 
   function toggleDrawer() {
     setDrawerOpen(!drawerOpen);
@@ -56,25 +59,24 @@ export default function Layout({ children }) {
             </video>
           </div>
           <div className="bestProductsList">
-            <h1 className="slider-slogan"><AiTwotoneStar color="#a70403"/>Our best selling machines</h1>
+            <h1 className="slider-slogan"><AiTwotoneStar color="#a70403" />Our best selling machines</h1>
             <BestProducts />
           </div>
         </div>
       )}
 
 
+      {about != null ? null : (
+        <aside>
+          <CategoryList></CategoryList>
+        </aside>
+      )}
 
-
-
-
-      <aside>
-        <CategoryList></CategoryList>
-      </aside>
       <main>
         {children}
       </main>
       <footer>
-        Footer
+        <Footer />
       </footer>
     </div>
   )

@@ -3,7 +3,8 @@
   grid-template-columns: 1fr 3fr;
   grid-template-areas: "header header"
                        "container container"
-                       "aside main"
+                       "aside aside"
+                       "main main"
                        "footer footer";
   max-width: 947px;
   margin: 0 auto;
@@ -126,7 +127,7 @@
   grid-area: header;
   display: flex;
   justify-content: space-between;
-  border-bottom: 1px solid #333;
+  border-bottom: 1px solid #a70403;
 }
 
 #icons {
@@ -138,7 +139,12 @@
   margin-right: 15px;
 }
 
-.Layout aside {
+.Layout footer {
+  grid-area: footer;
+}
+
+
+.Layout  {
   grid-area: aside;
 }
 
@@ -146,6 +152,6 @@
   grid-area: main;
 }
 
-.Layout footer {
-  grid-area: footer;
+.Layout main {
+  grid-area: main;
 }
