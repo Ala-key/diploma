@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { AppContext } from "../../App";
 import "./AddToCart.css";
 import Notification from "../Notification/Notification";
+import { NavLink } from "react-router-dom";
 
 
 export default function AddToCart({ product }) {
@@ -19,11 +20,19 @@ export default function AddToCart({ product }) {
     setTimeout(() => setDisplay("none"), 2000);
   }
 
+  function onBuytoClick() {
+    const qty = cart[product.id] ? cart[product.id] + 1 : 1;
+    console.log(qty);
+    setCart({ ...cart, [product.id]: qty });
+  }
+
   return (
     <div className="AddToCart">
-      <button onClick={onAddtoClick} className="buy">
-        buy
-      </button>
+      <NavLink to="/cart">
+        <button className="buy" onClick={onBuytoClick}>
+          buy
+        </button>
+      </NavLink>
       <button onClick={onAddtoClick} className="addtocart">
         add to cart
       </button>

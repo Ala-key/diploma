@@ -5,9 +5,22 @@ import './CartList.css'
 import {MdDelete} from "react-icons/md"
 
 export default function CartList() {
-  const {products,cart} = useContext(AppContext);
+  const {products,cart,setCart} = useContext(AppContext);
 
   const productsId = Object.keys(cart);
+
+  function onQuantityChange(product, qty) {
+    setCart({
+      ...cart,
+      [product.id]: qty,
+    });
+  }
+
+  function onRemoveClick(product) {
+    const newCart = { ...cart };
+    delete newCart[product.id];
+    setCart(newCart);
+  }
 
 
   const output = products
@@ -16,11 +29,16 @@ export default function CartList() {
   // вывести товары и их кол-во
   .map((product) => (
     <div className="CartItem" key={product.id}>
-      <img src={product.photo} alt={product.name} />
-      <Link id="Name" to={"/product/" + product.slug}>{product.name}</Link>
-      <input type="number"  value={cart[product.id]} min={1}  />
+      <img src={product.photo0} alt={product.name} />
+      <Link id="Name">{product.name}</Link>
+      <input
+          type="number"
+          value={cart[product.id]}
+          min={1}
+          onChange={(event) => onQuantityChange
+            (product, +event.target.value)} />
       <span>{cart[product.id] * product.price} $</span>
-      <button id="del"><MdDelete/></button>
+      <button   onClick={() => onRemoveClick(product)} id="del"><MdDelete/></button>
       <br/>
     </div>
   ));

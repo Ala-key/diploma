@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import Search from "../Search/Search";
 import "./Nav.css"
 
 export default function Nav(params) {
@@ -20,9 +21,7 @@ export default function Nav(params) {
           <NavLink to="/contacts">Contacts</NavLink>
         </li>
         {/* <li><a href="./delivery.html">Delivery</a></li> */}
-        <li className="NavItem">
-          <NavLink to="/delivery">Delivery</NavLink>
-        </li>
+        <Search/>
       </ul>
     </nav>
   )

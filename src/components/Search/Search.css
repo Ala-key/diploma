@@ -1,0 +1,49 @@
+.Search {
+  background-color: #faba34;
+  margin: auto 50px;
+  border-radius: 15px;
+  position: relative;
+  max-height: 30px;
+  white-space: nowrap;
+  box-sizing: border-box;
+}
+.Search input {
+  background: none;
+  border: 0;
+  border-radius: 15px;
+  color: #064d54;
+  height: 30px;
+  text-align: center;
+  outline: none;
+  padding: 0;
+}
+.Search .NoResults {
+  position: absolute;
+}
+.Search .SearchResults {
+  position: absolute;
+  right: 400px;
+  top: 0;
+  z-index: 99;
+}
+.Search .searcher {
+  color: #064d54;
+  margin: 8px;
+}
+.Search input::placeholder {
+  color: #064d54;
+}
+@media screen and (max-width: 1199px) {
+  .Search {
+    margin: 20px;
+  }
+}
+@media screen and (max-width: 999px) {
+  .Search {
+    width: 200px;
+    margin: 15px 30px;
+  }
+  .Search .SearchResults {
+    right: -25px;
+  }
+}
