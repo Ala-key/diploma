@@ -1,5 +1,4 @@
-import logo from "../assets/engl-logo.jpeg"
-import "./Logo.css"
+import logo from "../assets/b-logo.png"
 
 
 
