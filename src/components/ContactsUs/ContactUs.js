@@ -1,11 +1,9 @@
 import React from 'react';
 import './ContactUs.css';
-import { Link } from 'react-router-dom';
+
 
 const ContactUs = () => {
-  function scrollToTop() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
+
   return (
     <div className="contacts-container container">
       <h2 className="contacts-heading">Contact us</h2>
