@@ -42,7 +42,7 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/categories/chevrolet">Sneakers</Link>
+                <Link to="/categories/chevrolet">Chevrolet</Link>
               </li>
             </ul>
           </div>
