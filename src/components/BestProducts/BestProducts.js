@@ -16,6 +16,8 @@ export default function BestProducts() {
       return cartB - cartA;
     });
 
+    console.log(output[0]);
+
     if (output.length > 0 && output[0].cart) {
       const bestProduct = output[0].cart;
       const bestProductKeys = Object.keys(bestProduct);

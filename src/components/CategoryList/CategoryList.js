@@ -52,7 +52,7 @@ export default function CategoryList() {
       <li key={category.id}>
         <NavLink to={"/categories/" + category.slug}>
           {icon}
-          {category.name}
+        <p className="paragaf">{category.name}</p>
         </NavLink>
         <DeleteCategory category={category}/>
       </li>
