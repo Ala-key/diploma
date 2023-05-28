@@ -28,6 +28,12 @@ export default function Layout({ children }) {
 
   const cart = useMatch('/cart')
 
+  const thankyou = useMatch('/thank-you')
+
+  const orders = useMatch('/orders')
+
+ 
+
   function toggleDrawer() {
     setDrawerOpen(!drawerOpen);
   }
@@ -61,15 +67,19 @@ export default function Layout({ children }) {
               <source src={video} type="video/mp4" />
             </video>
           </div>
-          <div className="bestProductsList">
-            <h1 className="slider-slogan"><AiTwotoneStar color="#a70403" />Our best selling machines</h1>
-            <BestProducts />
-          </div>
         </div>
       )}
 
 
-      {about != null || contacts != null || cart != null ? null : (
+      {match === null && categ === null ? null : (
+          <div className="bestProductsList">
+            <h1 className="slider-slogan"><AiTwotoneStar color="#a70403" />Our best selling machines</h1>
+            <BestProducts />
+          </div>
+      )}
+
+
+      {about != null || contacts != null || cart != null || thankyou != null || orders != null ? null : (
         <aside>
           <CategoryList></CategoryList>
         </aside>

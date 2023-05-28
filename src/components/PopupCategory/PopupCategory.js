@@ -28,7 +28,7 @@ export function PopupCategory({ open, toggle, toggleFalse }) {
 
     console.log(translateState);
 
-    if (translateState >= 90 && translateState <= 115) {
+    if (translateState >= 60) {
       console.log(translateState);
       document.body.style.position = "static";
       popup.style.transform = "";
@@ -61,9 +61,6 @@ export function PopupCategory({ open, toggle, toggleFalse }) {
           </li>
           <li onClick={onClosePopup} className="NavItem">
             <NavLink to="/contacts">Contacts</NavLink>
-          </li>
-          <li onClick={onClosePopup} className="NavItem">
-            <NavLink to="/delivery">Delivery</NavLink>
           </li>
         </ul>
       </nav>

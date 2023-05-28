@@ -5,6 +5,7 @@
                        "container container"
                        "aside aside"
                        "main main"
+                       "best-list best-list"
                        "footer footer";
   max-width: 947px;
   margin: 0 auto;
@@ -14,12 +15,14 @@
 .bestProductsList {
   max-width: 947px;
   margin-bottom: 99px;
+  grid-area: best-list;
 }
 
 
 
 .container {
   grid-area: container;
+  margin-bottom: 99px;
 }
 
 
@@ -150,6 +153,6 @@
 
 .Layout main {
   grid-area: main;
-  margin-bottom: 99px;
+  margin-bottom: 185px;
 }
 

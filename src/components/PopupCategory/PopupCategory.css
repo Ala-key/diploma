@@ -51,14 +51,12 @@
 
 .PopupCategory #Nav .NavItem {
   list-style: none;
-  padding: 32px;
-  text-align: center;
+  padding: 38px 17px;
 }
 
 .PopupCategory #Nav ul {
   display: flex;
   flex-direction: column;
-  padding: 0px;
   margin-top: 4%;
 }
 
