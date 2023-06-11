@@ -33,7 +33,15 @@
 @media (max-width: 500px) {
  .CategoryList {
   width: 0px;
+  margin: 40px auto;
  }
+
+ .ProductList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  }
+
 }
 
 .CategoryList li a {
