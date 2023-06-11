@@ -37,6 +37,7 @@
   align-items: center;
   justify-content: center;
   background-color: white;
+  margin-bottom: 99px;
 }
 
 
@@ -69,6 +70,37 @@
   font-weight: 500;
   font-size: initial;
 }
+
+.menu {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  margin-bottom: 49px;
+}
+
+.menu button {
+  width: 142px;
+  height: 46px;
+  margin: 0 10px;
+  background-color: white;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  border: 1px solid red;
+  transition: background-color 0.3s ease;
+}
+
+.menu button:hover {
+  background-color: #a70403;
+  color: white;
+}
+
+.menu button:active {
+  background-color: black;
+  color: white;
+}
+
 
 
 .Product table tr {
