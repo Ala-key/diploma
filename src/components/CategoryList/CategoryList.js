@@ -1,29 +1,20 @@
 import { NavLink } from "react-router-dom";
-import "./CategoryList.css"
+import "./CategoryList.css";
 import { useContext } from "react";
 import { AppContext } from "../../App";
-import { SiMercedes } from "react-icons/si"
-import { SiFord } from "react-icons/si"
-import { SiChevrolet } from "react-icons/si"
-import { SiHonda } from "react-icons/si"
-import { SiBmw } from "react-icons/si"
-import { SiAudi } from "react-icons/si"
+import { SiMercedes } from "react-icons/si";
+import { SiFord } from "react-icons/si";
+import { SiChevrolet } from "react-icons/si";
+import { SiHonda } from "react-icons/si";
+import { SiBmw } from "react-icons/si";
+import { SiAudi } from "react-icons/si";
 import AddCategory from "../AddCategory/AddCategory";
 import DeleteCategory from "../DeleteCategory/DeleteCategory";
 
-
-
-
-
-
 export default function CategoryList() {
+  const { categories } = useContext(AppContext);
 
-  const {categories} = useContext(AppContext);
-
-
-
-
-  const output = categories.map(category => {
+  const output = categories.map((category) => {
     let icon = null;
     switch (category.name) {
       case "Mercedes":
@@ -47,29 +38,22 @@ export default function CategoryList() {
       default:
         break;
     }
-  
+
     return (
       <li key={category.id}>
         <NavLink to={"/categories/" + category.slug}>
           {icon}
-        <p className="paragaf">{category.name}</p>
+          <p className="paragaf">{category.name}</p>
         </NavLink>
-        <DeleteCategory category={category}/>
+        <DeleteCategory category={category} />
       </li>
     );
   });
 
-
-  
-
-
   return (
     <div className="CategoryList">
-      <ul>
-        {output}
-          <AddCategory/>
-      </ul>
-
+      {output}
+      <AddCategory />
     </div>
-  )
+  );
 }
